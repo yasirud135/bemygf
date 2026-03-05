@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Question</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#ffe6f0;
+}
+
+h1{
+    margin-bottom:40px;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#yesBtn{
+    background:#ff4d6d;
+    color:white;
+    margin-right:20px;
+}
+
+#noBtn{
+    background:#444;
+    color:white;
+    position:absolute;
+}
+
+#message{
+    display:none;
+    font-size:26px;
+    color:#d6004c;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Would you like to be my girlfriend? 💕</h1>
+
+<div>
+    <button id="yesBtn" onclick="sayYes()">Yes</button>
+    <button id="noBtn">No</button>
+</div>
+
+<div id="message">
+    I know you said yes. I love you so much Geha ❤️
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function(){
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+function sayYes(){
+    document.querySelector("h1").style.display="none";
+    document.getElementById("yesBtn").style.display="none";
+    document.getElementById("noBtn").style.display="none";
+    document.getElementById("message").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
